@@ -1,0 +1,119 @@
+# Secrets — NEVER commit
+.env
+.env.local
+*.pem
+*.key
+credentials.json
+secrets/
+
+# Data lake — too large and regeneratable
+# Allow .gitkeep so directory structure is preserved in git
+data/*
+!data/*/
+data/*/*
+!data/*/.gitkeep
+*.parquet
+*.duckdb
+*.feather
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.python-version
+
+# uv
+.uv_cache/
+
+# Testing & coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+notebooks/*.ipynb_output
+notebooks/output/
+notebooks/scratch/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Local overrides
+local/
+scratch/
+tmp/
+
+# Deliberate-violation fixture used to verify pre-commit hooks; not part of the tracked tree
+scripts/bad_test.py
+
+# Trading-specific: never commit broker logs or account data
+broker_logs/
+account_snapshots/
+positions/
+orders/
+fills/
+
+# Model artifacts (regeneratable, often large)
+models/*.pkl
+models/*.joblib
+models/*.onnx
+models/artifacts/
+
+# Research corpus PDFs (large, can be re-downloaded)
+papers/*.pdf
+papers/raw/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
